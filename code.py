@@ -97,14 +97,7 @@ final_rmse = np.sqrt(final_mse)
 
 # print(final_predictions, list(Y_test))
 
-# Using The Model
+for i in range(5):
+    print(f"Acutal Price: {list(Y_test)[i]} Predicted Price: {final_predictions[i]} ")
 
-# print(prepared_data[0])
-
-from joblib import dump, load
-import numpy as np
-model = load('Predictor.joblib') 
-features = np.array([[-0.43942006,  3.12628155, -1.12165014, -0.27288841, -1.42262747,
-       -0.23372779, -1.31238772,  2.61111401, -1.0016859 , -0.5778192 ,
-       -0.97491834,  0.41164221, -0.86091034]])
-print(model.predict(features))
+print("Root mean Square Error",final_rmse)
